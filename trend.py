@@ -16,8 +16,8 @@ def trend(data, ran):
     trend = "up"
   if trend == "down":
     trendy = [m1, m3]
-    trendx = [len(transdata), len(transdata) + ran]
+    trendx = [len(data) - ran, len(data)]
   elif trend == "up":
     trendy = [min1, min3]
-    trendx = [len(transdata), len(transdata) + ran]
+    trendx = [len(data) - ran, len(data)]
   return trend, trendx, trendy
