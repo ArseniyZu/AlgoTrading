@@ -6,9 +6,9 @@ def punch_bolBands(data, interval):
   punch = "non"
   transdata = data[::-1].reset_index(drop=True)
   transdata = transdata[:interval]
-  MSE = np.mean(transdata)
-  up = MSE + 2 * np.std(transdata)
-  down = MSE - 2 * np.std(transdata)
+  MSE = np.mean(transdata.Close)
+  up = MSE + 2 * np.std(transdata.Close)
+  down = MSE - 2 * np.std(transdata.Close)
   if transdata.High[0] > up:
     punch = "up"
   elif transdata.Low[0] < down:
@@ -19,7 +19,7 @@ def walking_bolBands(data, interval):
   count_of_up_punches = 0
   count_of_down_punches = 0
   transdata = data[::-1].reset_index(drop=True)
-  MSE_STD = [[np.mean(transdata[i: interval + i]), np.std(transdata[i: interval + i])] for i in range(interval)]
+  MSE_STD = [[np.mean(transdata.Close[i: interval + i]), np.std(transdata.Close[i: interval + i])] for i in range(interval)]
   up = []
   down = []
   for i in MSE_STD:
