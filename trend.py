@@ -11,13 +11,13 @@ def trend(data, ran):
   min2 = min(transdata["Low"][ran // 3: ran // 3 * 2])
   min3 = min(transdata["Low"][ran // 3 * 2:])
   if m3 > m2 > m1 or min3 > min2 > min1:
-    trend = "up"
-  elif m3 < m2 < m1 or min3 < min2 < min1:
     trend = "down"
+  elif m3 < m2 < m1 or min3 < min2 < min1:
+    trend = "up"
   if trend == "down":
     trendy = [m1, m3]
-    trendx = [start, len(data)]
+    trendx = [len(transdata), len(transdata) + ran]
   elif trend == "up":
     trendy = [min1, min3]
-    trendx = [start, len(data)]
+    trendx = [len(transdata), len(transdata) + ran]
   return trend, trendx, trendy
