@@ -12,9 +12,9 @@ def punch_bolBands(data, interval, std):
     punch = "up"
   elif transdata.Low[0] < down:
     punch = "down"
-  elif transdata.High[0] = up:
+  elif transdata.High[0] == up:
     punch = "up touch"
-  elif transdata.Low[0] = down:
+  elif transdata.Low[0] == down:
     punch = "down touch"
   return punch
 
