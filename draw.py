@@ -16,6 +16,6 @@ def drawTrend(df, trendx, trendy):
                 high=df["High"],
                 low=df['Low'],
                 close=df['Close'])])
-  fig.add_trace(go.Scatter, x = trendx, y = trendy,
-                mode = "lines")
+  fig.add_trace(go.Scatter(x = trendx, y = trendy,
+                mode = "lines", line=go.scatter.Line(color="gray")))
   fig.show()
