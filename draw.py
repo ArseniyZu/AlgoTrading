@@ -9,3 +9,13 @@ def drawCandle(df, left, right):
                 close=df['Close'][left: right + 1])])
     fig.update_layout(title=f"df")
     fig.show()
+    
+def drawTrend(df, trendx, trendy):
+  fig = go.Figure(data=[go.Candlestick(x=[i for i in range(len(df))],
+                open=df["Open"],
+                high=df["High"],
+                low=df['Low'],
+                close=df['Close'])])
+  fig.add_trace(go.Scatter, x = trendx, y = trendy,
+                mode = "lines")
+  fig.show()
