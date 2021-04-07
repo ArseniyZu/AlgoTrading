@@ -22,6 +22,8 @@ def find_W_figure(data, interval):
   left_min = min(transdata.Low[interval // 2 + 1: interval])
   middle_max = max(transdata.Low[right_min_idx + 1: left_min_idx])
   if W_figure_criterion(right_max, left_max, middle_max, right_min, left_min):
-    W = "yes"
+    if punch_bolBands(data[: len(data) - left_min_idx], 20, 3):
+      W = "yes"
   return W
+
 
