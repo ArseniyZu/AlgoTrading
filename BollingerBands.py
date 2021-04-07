@@ -27,7 +27,7 @@ def walking_bolBands(data, interval, ran, std):
   for i in range(ran):
     if transdata.High[i] > up[i]:
       count_of_up_punches += 1
-    if transdata.Low[i] > down[i]:
+    if transdata.Low[i] < down[i]:
       count_of_down_punches += 1
   trend_bolB = trend(data, ran)[0]
   return trend_bolB, count_of_up_punches, count_of_down_punches
