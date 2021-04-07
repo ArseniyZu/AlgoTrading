@@ -15,9 +15,9 @@ def trend(data, ran):
   elif m3 < m2 < m1 or min3 < min2 < min1:
     trend = "up"
   if trend == "down":
-    trendy = [m1, m3]
+    trendy = [m3, m1]
     trendx = [len(data) - ran, len(data)]
   elif trend == "up":
-    trendy = [min1, min3]
+    trendy = [min3, min1]
     trendx = [len(data) - ran, len(data)]
   return trend, trendx, trendy
