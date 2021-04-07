@@ -3,13 +3,14 @@ from trend import trend
 
 def punch_bolBands(data, interval):
   punch = "non"
-  transdata = data[len(data) - interval:]
+  transdata = data[::-1]
+  transdata = transdata[:interval]
   MSE = np.mean(transdata)
   up = MSE + 2 * np.std(transdata)
   down = MSE - 2 * np.std(transdata)
-  if transdata.High[-1] > up:
+  if transdata.High[0] > up:
     punch = "up"
-  elif transdata.Low[-1] < down:
+  elif transdata.Low[0] < down:
     punch = "down"
   return punch
 
