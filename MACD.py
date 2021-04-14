@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def MACD(data, len1, len2, siglen):
   data['MACD'] = pd.Series(np.random.randn(len(data.Close)), index=data.index)
