@@ -19,6 +19,6 @@ def find_cross(data):
   signal = 0
   if data["HIST_MACD"][-2] > 0 and data["HIST_MACD"][-1] < 0:
     signal = "Down"
-  elif data["HIST_MACD"][-2] < 0 and data["HIST_MACD"][-1] > 0
+  elif data["HIST_MACD"][-2] < 0 and data["HIST_MACD"][-1] > 0:
     signal = "Up"
   return signal
