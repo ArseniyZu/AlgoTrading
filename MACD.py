@@ -16,5 +16,5 @@ def MACD(data, lendata, len1, len2, siglen):
   return data
 
 def find_cross(last_data):
-  if last_data.MACD = last_data.Signal:
+  if last_data.MACD == last_data.Signal:
     return("Signal to move")
