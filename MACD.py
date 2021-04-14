@@ -14,3 +14,7 @@ def MACD(data, lendata, len1, len2, siglen):
   data = data[len2 + siglen:]
   data["HIST_MACD"] = data.MACD - data.Signal
   return data
+
+def find_cross(last_data):
+  if last_data.MACD = last_data.Signal:
+    return("Signal to move")
