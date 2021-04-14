@@ -17,8 +17,8 @@ def MACD(data, lendata, len1, len2, siglen):
 
 def find_cross(data):
   signal = 0
-  if data["HIST_MACD"][-2] > 0 and data["HIST_MACD"][-1] < 0:
+  if data.iloc[-2]["HIST_MACD"] > 0 and data.iloc[-1]["HIST_MACD"] < 0:
     signal = "Down"
-  elif data["HIST_MACD"][-2] < 0 and data["HIST_MACD"][-1] > 0:
+  elif data.iloc[-2]["HIST_MACD"] < 0 and data.iloc[-1]["HIST_MACD"] > 0:
     signal = "Up"
   return signal
