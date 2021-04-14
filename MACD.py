@@ -12,4 +12,5 @@ def MACD(data, lendata, len1, len2, siglen):
     transdata["Signal"][i] = np.mean(transdata["MACD"][i:i + siglen])
   data = transdata[::-1].reset_index(drop=True)
   data = data[len2 + siglen:]
+  data["HIST_MACD"] = data.MACD - data.Signal
   return data
