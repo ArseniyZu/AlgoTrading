@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 def MACD(data, len1, len2, siglen):
-  data['MACD'] = pd.Series(np.random.randn(len(data.Close)), index=data.index)
+  data['MACD'] = data.Close
   transdata = data[::-1].reset_index(drop=True)
   for i in range(len(transdata.Close) - len2):
     transdata["MACD"][i] = np.mean(trasndata.Close[i:i + len1]) - np.mean(transdata.Close[i: i + len2])
