@@ -10,7 +10,7 @@ class Operations():
         if name in self.assets.keys():
             if self.assets[name] == 0:
                 print("No asset in estate")
-            if self.assets[name] >= count:
+            elif self.assets[name] >= count:
                 self.assets[name] -= count
                 self.budget += count * price
             else:
