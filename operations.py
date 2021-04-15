@@ -37,11 +37,3 @@ class Operations():
     def take_profit(self, name, current_price, percentage):
         if (current_price - self.buy_price[name]) / self.buy_price[name] > percentage:
             self.sell(name, self.assets[name], current_price)
-
-
-a = Operations(1000)
-a.buy("MTC", 5, 100)
-a.stop_loss("MTC", 90, 0.05)
-print(a.budget, a.assets)
-a.take_profit("MTC", 110, 0.05)
-print(a.budget, a.assets)
