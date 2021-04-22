@@ -20,7 +20,7 @@ def drawTrend(df, trendx, trendy):
                 mode = "lines", line=go.scatter.Line(color="gray")))
   fig.show()
 
-def draw_Idic(data, ind1, ind2):
+def draw_Idic(df, ind1, ind2):
      fig = go.Figure(data=[go.Candlestick(x=[i for i in range(len(df))],
                 open=df["Open"],
                 high=df["High"],
