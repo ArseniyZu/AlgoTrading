@@ -26,6 +26,6 @@ def draw_Idic(df, ind1, ind2):
                 high=df["High"],
                 low=df['Low'],
                 close=df['Close'])])
-     fig.add_trace(go.Scatter(x = range(len(data)), y = ind1, mode="lines", line=go.scatter.Line(color="orange")))
-     fig.add_trace(go.Scatter(x = range(len(data)), y = ind2, mode="lines", line=go.scatter.Line(color="blue")))
+     fig.add_trace(go.Scatter(x = range(len(df)), y = ind1, mode="lines", line=go.scatter.Line(color="orange")))
+     fig.add_trace(go.Scatter(x = range(len(df)), y = ind2, mode="lines", line=go.scatter.Line(color="blue")))
      fig.show()
