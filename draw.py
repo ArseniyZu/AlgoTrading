@@ -19,3 +19,13 @@ def drawTrend(df, trendx, trendy):
   fig.add_trace(go.Scatter(x = trendx, y = trendy,
                 mode = "lines", line=go.scatter.Line(color="gray")))
   fig.show()
+
+def draw_Idic(data, ind1, ind2):
+     fig = go.Figure(data=[go.Candlestick(x=[i for i in range(len(df))],
+                open=df["Open"],
+                high=df["High"],
+                low=df['Low'],
+                close=df['Close'])])
+     fig.add_trace(go.Scatter(x = range(len(data)), y = ind1, mode="lines", line=go.scatter.Line(color="orange")))
+     fig.add_trace(go.Scatter(x = range(len(data)), y = ind2, mode="lines", line=go.scatter.Line(color="blue")))
+     fig.show()
