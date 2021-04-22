@@ -21,14 +21,16 @@ class Operations():
 
     def buy(self, name, count, price):
         if self.budget >= price * count:
-            if self.buy_price[name] == 0 or name not in self.buy_price.keys():
+            if name not in self.buy_price.keys():
                 self.budget -= price * count
-                if name in self.assets.keys():
-                    self.assets[name] += count
-                    self.buy_price[name] = price
-                else:
-                    self.buy_price.update({name: price})
-                    self.assets.update({name: count})
+                self.buy_price.update({name: price})
+                self.assets.update({name: count})
+            elif self.buy_price[name] == 0:
+                self.budget -= price * count
+                self.assets[name] += count
+                self.buy_price[name] = price
+            else:
+                print("Asset already in own")
         else:
             print("No money in budget")
 
