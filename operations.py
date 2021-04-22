@@ -13,6 +13,7 @@ class Operations():
             elif self.assets[name] >= count:
                 self.assets[name] -= count
                 self.budget += count * price
+                self.buy_price[name] = 0
             else:
                 print("Selling counts more than having")
         else:
@@ -20,13 +21,14 @@ class Operations():
 
     def buy(self, name, count, price):
         if self.budget >= price * count:
-            self.budget -= price * count
-            if name in self.assets.keys():
-                self.assets[name] += count
-                self.buy_price[name] = price
-            else:
-                self.buy_price.update({name: price})
-                self.assets.update({name: count})
+            if self.buy_price[name] == 0 or name not in self.buy_price.keys():
+                self.budget -= price * count
+                if name in self.assets.keys():
+                    self.assets[name] += count
+                    self.buy_price[name] = price
+                else:
+                    self.buy_price.update({name: price})
+                    self.assets.update({name: count})
         else:
             print("No money in budget")
 
