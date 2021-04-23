@@ -164,6 +164,7 @@ df.shape
 drawCandle(df, 0, len(df))
 ```
 
+![png](images/output_1.png)
 
 <html>
 <head><meta charset="utf-8" /></head>
@@ -338,7 +339,7 @@ df.Date.iloc[0]
 ```python
 draw_Idic(df, df.aroon_up, df.aroon_down) # Up - orange, Down - Blue
 ```
-
+![png](images/output_2.png)
 
 <html>
 <head><meta charset="utf-8" /></head>
@@ -401,7 +402,7 @@ df["StockSig"] = ta.momentum.stoch_signal(df.High, df.Low, df.Close, 14)
 ```python
 draw_Idic(df, df.Stoch, df.StockSig)
 ```
-
+![png](images/output_3.png)
 
 <html>
 <head><meta charset="utf-8" /></head>
